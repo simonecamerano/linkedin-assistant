@@ -39,7 +39,7 @@ export async function scrapeUserProfile(profileUrl = LINKEDIN_PROFILE_URL, cooki
     await context.addCookies([{
       name: 'li_at',
       value: cookieVal,
-      domain: '.www.linkedin.com',
+      domain: '.linkedin.com',
       path: '/',
     }]);
 
@@ -96,7 +96,7 @@ export async function scrapeUserActivity(profileUrl = LINKEDIN_PROFILE_URL, cook
     await context.addCookies([{
       name: 'li_at',
       value: cookieVal,
-      domain: '.www.linkedin.com',
+      domain: '.linkedin.com',
       path: '/',
     }]);
 

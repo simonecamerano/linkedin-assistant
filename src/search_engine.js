@@ -32,7 +32,7 @@ export async function searchLinkedInPosts(keywords, maxResults = 5) {
       await context.addCookies([{
         name: 'li_at',
         value: LINKEDIN_LI_AT,
-        domain: '.www.linkedin.com',
+        domain: '.linkedin.com',
         path: '/',
       }]);
 
@@ -61,7 +61,9 @@ export async function searchLinkedInPosts(keywords, maxResults = 5) {
       }, maxResults);
 
       await browser.close();
-      return results;
+      if (results && results.length > 0) {
+        return results;
+      }
     } catch (err) {
       if (browser) await browser.close().catch(() => {});
       // Fall through to the Tavily fallback below.
