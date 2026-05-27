@@ -1,11 +1,34 @@
+/**
+ * @module triage_filter
+ * First-pass relevance gate for LinkedIn posts.
+ *
+ * Sends each post to a fast, cheap LLM (Groq) with a strict boolean prompt.
+ * Only posts that pass this filter are forwarded to the more expensive
+ * DeepSeek SSI analysis step, keeping API costs low.
+ */
+
 import { GROQ_API_KEY, TRIAGE_MODEL } from './config.js';
 
+/**
+ * Runs a lightweight LLM triage check on a single LinkedIn post to determine
+ * whether it is worth a full SSI analysis.
+ *
+ * The model is instructed to respond with only "SI" or "NO", and
+ * `max_tokens: 5` enforces that constraint at the API level to minimise cost
+ * and latency.  `temperature: 0` ensures deterministic, reproducible results.
+ *
+ * @param {{ title: string, url: string, content: string }} post - The post to evaluate.
+ * @returns {Promise<boolean>} `true` if the post passes the relevance filter, `false` otherwise.
+ */
 export async function eseguiTriagePost(post) {
   if (!GROQ_API_KEY) {
     console.error('[triage] GROQ_API_KEY is not configured');
     return false;
   }
 
+  // The system prompt defines three acceptance criteria and one rejection rule.
+  // Keeping the criteria explicit in the prompt (rather than embedding them in
+  // code) makes them easy to tune without changing application logic.
   const systemPrompt = `You are a boolean relevance filter. Respond with only "SI" or "NO".
 
 Return "SI" if the post meets at least one of these criteria:
@@ -32,6 +55,7 @@ Return "NO" for everything else.`;
           { role: 'system', content: systemPrompt },
           { role: 'user', content: userMessage },
         ],
+        // Limit tokens to a single word — the model only needs to say "SI" or "NO".
         max_tokens: 5,
         temperature: 0,
       }),
@@ -44,6 +68,8 @@ Return "NO" for everything else.`;
 
     const data = await response.json();
     const answer = data.choices?.[0]?.message?.content?.trim() ?? '';
+    // Accept any response that contains "SI" (case-insensitive), so minor
+    // model deviations like "Si." or "SI!" still pass.
     return answer.toUpperCase().includes('SI');
   } catch (err) {
     console.error('[triage] Fetch error:', err.message);
