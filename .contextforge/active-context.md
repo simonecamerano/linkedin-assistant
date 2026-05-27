@@ -6,6 +6,8 @@
 
 ## Recent 10 Commits
 
+- `cacc5ad feat: implement interactive Telegram bot with command support and add project documentation`
+- `3636937 feat: implement Telegram bot orchestration and automated digest delivery pipeline`
 - `7f45296 feat: implement AI triage filter and SSI post analysis modules with comprehensive unit tests`
 - `bdaf471 feat: implement core infrastructure, Playwright scrapers, search engine, and test setup for LinkedIn assistant`
 - `81400da feat: initialize project structure with context management, model routing rules, and roadmap documentation`

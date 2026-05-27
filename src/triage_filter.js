@@ -36,7 +36,9 @@ Return "SI" if the post meets at least one of these criteria:
 - Relevant to AI automation workflows (LLMs, RAG, multi-agents, pipelines, AI tools)
 - Relevant to career transitions or tech recruitment
 
-Additionally, the post must contain actual discussions, thoughts, or insights. Reject pure advertisements and dry job listings with no substance.
+Additionally, the post must satisfy ALL of these constraints:
+- The post must be written in Italian.
+- The post must contain actual discussions, thoughts, or insights. Reject pure advertisements and dry job listings with no substance.
 
 Return "NO" for everything else.`;
 

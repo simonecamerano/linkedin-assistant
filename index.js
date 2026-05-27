@@ -45,9 +45,9 @@ async function runLinkedinAssistant() {
   // Topic queries that define the user's areas of interest.
   // Adding or removing entries here changes what the bot searches for.
   const queries = [
-    'Vue.js Node.js',
-    'AI automation workflows',
-    'career transition developer'
+    'sviluppatore Vue.js Node.js',
+    'automazione AI workflow italiano',
+    'cambio carriera sviluppatore'
   ];
 
   console.log('🔍 Searching recent posts...');
