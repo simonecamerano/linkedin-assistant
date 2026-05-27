@@ -2,3 +2,32 @@
 
 This document provides a structured overview of the project's source modules.
 
+## TypeScript / JavaScript Modules
+
+### [src/config.js](file:///home/simone/Documenti/start2impact/Progetti personali/linkedin-assistent/src/config.js)
+- **Exports:** `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`, `TAVILY_API_KEY`, `GROQ_API_KEY`, `DEEPSEEK_API_KEY`, `LINKEDIN_LI_AT`, `LINKEDIN_PROFILE_URL`, `TRIAGE_MODEL`, `ANALYSIS_MODEL`, `MIN_MATCH_SCORE`
+- **Imports from:** `dotenv`
+
+### [src/linkedin_scraper.js](file:///home/simone/Documenti/start2impact/Progetti personali/linkedin-assistent/src/linkedin_scraper.js)
+- **Exports:** `scrapeUserProfile`, `scrapeUserActivity`
+- **Functions:** `scrapeUserProfile`, `scrapeUserActivity`
+- **Imports from:** `playwright`, `fs`, `path`, `./config.js`
+
+### [src/search_engine.js](file:///home/simone/Documenti/start2impact/Progetti personali/linkedin-assistent/src/search_engine.js)
+- **Exports:** `searchLinkedInPosts`
+- **Functions:** `searchLinkedInPosts`
+- **Imports from:** `@tavily/core`, `playwright`, `./config.js`
+
+### [src/seen_store.js](file:///home/simone/Documenti/start2impact/Progetti personali/linkedin-assistent/src/seen_store.js)
+- **Exports:** `loadSeen`, `saveSeen`
+- **Functions:** `loadSeen`, `saveSeen`
+- **Imports from:** `fs`, `path`
+
+### [tests/search_and_scrape.test.js](file:///home/simone/Documenti/start2impact/Progetti personali/linkedin-assistent/tests/search_and_scrape.test.js)
+- **Exports:** *none*
+- **Imports from:** `vitest`, `fs`, `../src/linkedin_scraper.js`, `../src/search_engine.js`, `playwright`, `@tavily/core`
+
+### [tests/setup.test.js](file:///home/simone/Documenti/start2impact/Progetti personali/linkedin-assistent/tests/setup.test.js)
+- **Exports:** *none*
+- **Imports from:** `vitest`, `fs`, `path`, `../src/config.js`, `../src/seen_store.js`
+
