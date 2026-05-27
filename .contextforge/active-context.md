@@ -6,6 +6,7 @@
 
 ## Recent 10 Commits
 
+- `bdaf471 feat: implement core infrastructure, Playwright scrapers, search engine, and test setup for LinkedIn assistant`
 - `81400da feat: initialize project structure with context management, model routing rules, and roadmap documentation`
 
 ## Active Tasks in Code (TODO / FIXME)
@@ -14,7 +15,7 @@ No TODO or FIXME comments found in the code.
 
 ## Roadmap
 
-**Progress:** 7/14 tasks completed (50%)
+**Progress:** 10/14 tasks completed (71%)
 
 ### Phase 1 — Setup & Config
 - [x] Initialize `package.json` with dependencies (`playwright`, `@tavily/core`, `dotenv`, `vitest`)
@@ -28,9 +29,9 @@ No TODO or FIXME comments found in the code.
 - [x] Add unit tests for search and scraping with mock APIs
 
 ### Phase 3 — AI Triage & SSI Analysis
-- [ ] Develop `src/triage_filter.js` (boolean Groq filter based on user profile/CV)
-- [ ] Develop `src/ssi_analyzer.js` (DeepSeek analysis and strategic comment generation)
-- [ ] Add unit tests for triage and analysis AI
+- [x] Develop `src/triage_filter.js` (boolean Groq filter based on user profile/CV)
+- [x] Develop `src/ssi_analyzer.js` (DeepSeek analysis and strategic comment generation)
+- [x] Add unit tests for triage and analysis AI
 
 ### Phase 4 — Integration & Telegram Bot
 - [ ] Develop `src/telegram_sender.js` to format and send Telegram digests

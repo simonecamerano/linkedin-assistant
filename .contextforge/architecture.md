@@ -23,6 +23,16 @@ This document provides a structured overview of the project's source modules.
 - **Functions:** `loadSeen`, `saveSeen`
 - **Imports from:** `fs`, `path`
 
+### [src/ssi_analyzer.js](file:///home/simone/Documenti/start2impact/Progetti personali/linkedin-assistent/src/ssi_analyzer.js)
+- **Exports:** `analizzaPostPerSSI`
+- **Functions:** `analizzaPostPerSSI`
+- **Imports from:** `./config.js`
+
+### [src/triage_filter.js](file:///home/simone/Documenti/start2impact/Progetti personali/linkedin-assistent/src/triage_filter.js)
+- **Exports:** `eseguiTriagePost`
+- **Functions:** `eseguiTriagePost`
+- **Imports from:** `./config.js`
+
 ### [tests/search_and_scrape.test.js](file:///home/simone/Documenti/start2impact/Progetti personali/linkedin-assistent/tests/search_and_scrape.test.js)
 - **Exports:** *none*
 - **Imports from:** `vitest`, `fs`, `../src/linkedin_scraper.js`, `../src/search_engine.js`, `playwright`, `@tavily/core`
@@ -30,4 +40,8 @@ This document provides a structured overview of the project's source modules.
 ### [tests/setup.test.js](file:///home/simone/Documenti/start2impact/Progetti personali/linkedin-assistent/tests/setup.test.js)
 - **Exports:** *none*
 - **Imports from:** `vitest`, `fs`, `path`, `../src/config.js`, `../src/seen_store.js`
+
+### [tests/triage_and_analysis.test.js](file:///home/simone/Documenti/start2impact/Progetti personali/linkedin-assistent/tests/triage_and_analysis.test.js)
+- **Exports:** *none*
+- **Imports from:** `vitest`, `../src/triage_filter.js`, `../src/ssi_analyzer.js`
 

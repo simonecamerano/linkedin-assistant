@@ -12,9 +12,9 @@
 - [x] Add unit tests for search and scraping with mock APIs
 
 ## Phase 3 — AI Triage & SSI Analysis
-- [ ] Develop `src/triage_filter.js` (boolean Groq filter based on user profile/CV)
-- [ ] Develop `src/ssi_analyzer.js` (DeepSeek analysis and strategic comment generation)
-- [ ] Add unit tests for triage and analysis AI
+- [x] Develop `src/triage_filter.js` (boolean Groq filter based on user profile/CV)
+- [x] Develop `src/ssi_analyzer.js` (DeepSeek analysis and strategic comment generation)
+- [x] Add unit tests for triage and analysis AI
 
 ## Phase 4 — Integration & Telegram Bot
 - [ ] Develop `src/telegram_sender.js` to format and send Telegram digests

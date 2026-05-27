@@ -22,13 +22,15 @@ This document contains an optimized summary of the project context for LLMs.
   - **Exports:** `searchLinkedInPosts`
 - `src/seen_store.js`:
   - **Exports:** `loadSeen`, `saveSeen`
+- `src/ssi_analyzer.js`:
+  - **Exports:** `analizzaPostPerSSI`
+- `src/triage_filter.js`:
+  - **Exports:** `eseguiTriagePost`
 - `tests/search_and_scrape.test.js`:
 - `tests/setup.test.js`:
+- `tests/triage_and_analysis.test.js`:
 
 ### Open Tasks
-- [ ] Develop `src/triage_filter.js` (boolean Groq filter based on user profile/CV) *(Phase 3 — AI Triage & SSI Analysis)*
-- [ ] Develop `src/ssi_analyzer.js` (DeepSeek analysis and strategic comment generation) *(Phase 3 — AI Triage & SSI Analysis)*
-- [ ] Add unit tests for triage and analysis AI *(Phase 3 — AI Triage & SSI Analysis)*
 - [ ] Develop `src/telegram_sender.js` to format and send Telegram digests *(Phase 4 — Integration & Telegram Bot)*
 - [ ] Create main orchestration pipeline in `index.js` *(Phase 4 — Integration & Telegram Bot)*
 - [ ] Create controller `bot.js` for Telegram remote control (/suggest, /profile, /status) *(Phase 4 — Integration & Telegram Bot)*
