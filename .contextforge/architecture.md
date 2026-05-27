@@ -4,6 +4,16 @@ This document provides a structured overview of the project's source modules.
 
 ## TypeScript / JavaScript Modules
 
+### [bot.js](file:///home/simone/Documenti/start2impact/Progetti personali/linkedin-assistent/bot.js)
+- **Exports:** *none*
+- **Functions:** `sendMessage`, `runScript`, `poll`
+- **Imports from:** `child_process`, `fs`, `./src/config.js`
+
+### [index.js](file:///home/simone/Documenti/start2impact/Progetti personali/linkedin-assistent/index.js)
+- **Exports:** *none*
+- **Functions:** `runLinkedinAssistant`
+- **Imports from:** `./src/linkedin_scraper.js`, `./src/search_engine.js`, `./src/triage_filter.js`, `./src/ssi_analyzer.js`, `./src/seen_store.js`, `./src/telegram_sender.js`, `./src/config.js`
+
 ### [src/config.js](file:///home/simone/Documenti/start2impact/Progetti personali/linkedin-assistent/src/config.js)
 - **Exports:** `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`, `TAVILY_API_KEY`, `GROQ_API_KEY`, `DEEPSEEK_API_KEY`, `LINKEDIN_LI_AT`, `LINKEDIN_PROFILE_URL`, `TRIAGE_MODEL`, `ANALYSIS_MODEL`, `MIN_MATCH_SCORE`
 - **Imports from:** `dotenv`
@@ -26,6 +36,11 @@ This document provides a structured overview of the project's source modules.
 ### [src/ssi_analyzer.js](file:///home/simone/Documenti/start2impact/Progetti personali/linkedin-assistent/src/ssi_analyzer.js)
 - **Exports:** `analizzaPostPerSSI`
 - **Functions:** `analizzaPostPerSSI`
+- **Imports from:** `./config.js`
+
+### [src/telegram_sender.js](file:///home/simone/Documenti/start2impact/Progetti personali/linkedin-assistent/src/telegram_sender.js)
+- **Exports:** `convertiMarkdownInHtml`, `inviaATelegram`
+- **Functions:** `convertiMarkdownInHtml`, `inviaATelegram`
 - **Imports from:** `./config.js`
 
 ### [src/triage_filter.js](file:///home/simone/Documenti/start2impact/Progetti personali/linkedin-assistent/src/triage_filter.js)

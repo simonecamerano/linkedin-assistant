@@ -6,6 +6,7 @@
 
 ## Recent 10 Commits
 
+- `7f45296 feat: implement AI triage filter and SSI post analysis modules with comprehensive unit tests`
 - `bdaf471 feat: implement core infrastructure, Playwright scrapers, search engine, and test setup for LinkedIn assistant`
 - `81400da feat: initialize project structure with context management, model routing rules, and roadmap documentation`
 
@@ -15,7 +16,7 @@ No TODO or FIXME comments found in the code.
 
 ## Roadmap
 
-**Progress:** 10/14 tasks completed (71%)
+**Progress:** 14/14 tasks completed (100%)
 
 ### Phase 1 — Setup & Config
 - [x] Initialize `package.json` with dependencies (`playwright`, `@tavily/core`, `dotenv`, `vitest`)
@@ -34,8 +35,8 @@ No TODO or FIXME comments found in the code.
 - [x] Add unit tests for triage and analysis AI
 
 ### Phase 4 — Integration & Telegram Bot
-- [ ] Develop `src/telegram_sender.js` to format and send Telegram digests
-- [ ] Create main orchestration pipeline in `index.js`
-- [ ] Create controller `bot.js` for Telegram remote control (/suggest, /profile, /status)
-- [ ] Run integration and end-to-end pipeline validation
+- [x] Develop `src/telegram_sender.js` to format and send Telegram digests
+- [x] Create main orchestration pipeline in `index.js`
+- [x] Create controller `bot.js` for Telegram remote control (/suggest, /profile, /status)
+- [x] Run integration and end-to-end pipeline validation
 

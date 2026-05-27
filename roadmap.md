@@ -17,7 +17,7 @@
 - [x] Add unit tests for triage and analysis AI
 
 ## Phase 4 — Integration & Telegram Bot
-- [ ] Develop `src/telegram_sender.js` to format and send Telegram digests
-- [ ] Create main orchestration pipeline in `index.js`
-- [ ] Create controller `bot.js` for Telegram remote control (/suggest, /profile, /status)
-- [ ] Run integration and end-to-end pipeline validation
+- [x] Develop `src/telegram_sender.js` to format and send Telegram digests
+- [x] Create main orchestration pipeline in `index.js`
+- [x] Create controller `bot.js` for Telegram remote control (/suggest, /profile, /status)
+- [x] Run integration and end-to-end pipeline validation
