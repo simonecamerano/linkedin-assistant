@@ -20,25 +20,22 @@ import { GROQ_API_KEY, TRIAGE_MODEL } from './config.js';
  * @param {{ title: string, url: string, content: string }} post - The post to evaluate.
  * @returns {Promise<boolean>} `true` if the post passes the relevance filter, `false` otherwise.
  */
-export async function eseguiTriagePost(post) {
+export async function eseguiTriagePost(post, profileContext = '') {
   if (!GROQ_API_KEY) {
     console.error('[triage] GROQ_API_KEY is not configured');
     return false;
   }
 
-  // The system prompt defines three acceptance criteria and one rejection rule.
-  // Keeping the criteria explicit in the prompt (rather than embedding them in
-  // code) makes them easy to tune without changing application logic.
-  const systemPrompt = `You are a boolean relevance filter. Respond with only "SI" or "NO".
+  const profileSection = profileContext
+    ? `\n\nUSER CONTEXT:\n${profileContext}\n\nUse the user context above to judge whether this post is relevant to their specific tech stack, projects, GDO leadership background, and latest activity.`
+    : '';
 
-Return "SI" if the post meets at least one of these criteria:
-- Relevant to software engineering (Node.js, Vue, React, JavaScript, TypeScript, Vite, Vitest, or similar)
-- Relevant to AI automation workflows (LLMs, RAG, multi-agents, pipelines, AI tools)
-- Relevant to career transitions or tech recruitment
+  const systemPrompt = `You are a boolean relevance filter. Respond with only "SI" or "NO".${profileSection}
 
-Additionally, the post must satisfy ALL of these constraints:
-- The post must be written in Italian.
-- The post must contain actual discussions, thoughts, or insights. Reject pure advertisements and dry job listings with no substance.
+Return "SI" only if the post meets ALL of these constraints:
+- The post is written in Italian.
+- The post contains actual discussions, thoughts, or insights — not pure advertisements or dry job listings with no substance.
+- The post is relevant to the user's profile and fields of interest (tech stack, projects, career trajectory, or adjacent topics where their background adds value).
 
 Return "NO" for everything else.`;
 

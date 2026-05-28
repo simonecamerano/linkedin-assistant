@@ -12,7 +12,7 @@ This document provides a structured overview of the project's source modules.
 ### [index.js](file:///home/simone/Documenti/start2impact/Progetti personali/linkedin-assistent/index.js)
 - **Exports:** *none*
 - **Functions:** `runLinkedinAssistant`
-- **Imports from:** `./src/linkedin_scraper.js`, `./src/search_engine.js`, `./src/triage_filter.js`, `./src/ssi_analyzer.js`, `./src/seen_store.js`, `./src/telegram_sender.js`, `./src/config.js`
+- **Imports from:** `./src/linkedin_scraper.js`, `./src/search_engine.js`, `./src/triage_filter.js`, `./src/ssi_analyzer.js`, `./src/seen_store.js`, `./src/telegram_sender.js`, `./src/config.js`, `./src/query_generator.js`
 
 ### [src/config.js](file:///home/simone/Documenti/start2impact/Progetti personali/linkedin-assistent/src/config.js)
 - **Exports:** `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`, `TAVILY_API_KEY`, `GROQ_API_KEY`, `DEEPSEEK_API_KEY`, `LINKEDIN_LI_AT`, `LINKEDIN_PROFILE_URL`, `TRIAGE_MODEL`, `ANALYSIS_MODEL`, `MIN_MATCH_SCORE`
@@ -22,6 +22,11 @@ This document provides a structured overview of the project's source modules.
 - **Exports:** `scrapeUserProfile`, `scrapeUserActivity`
 - **Functions:** `scrapeUserProfile`, `scrapeUserActivity`
 - **Imports from:** `playwright`, `fs`, `path`, `./config.js`
+
+### [src/query_generator.js](file:///home/simone/Documenti/start2impact/Progetti personali/linkedin-assistent/src/query_generator.js)
+- **Exports:** `generateDynamicQueries`
+- **Functions:** `generateDynamicQueries`
+- **Imports from:** `./config.js`
 
 ### [src/search_engine.js](file:///home/simone/Documenti/start2impact/Progetti personali/linkedin-assistent/src/search_engine.js)
 - **Exports:** `searchLinkedInPosts`
@@ -59,4 +64,8 @@ This document provides a structured overview of the project's source modules.
 ### [tests/triage_and_analysis.test.js](file:///home/simone/Documenti/start2impact/Progetti personali/linkedin-assistent/tests/triage_and_analysis.test.js)
 - **Exports:** *none*
 - **Imports from:** `vitest`, `../src/triage_filter.js`, `../src/ssi_analyzer.js`
+
+### [vitest.config.js](file:///home/simone/Documenti/start2impact/Progetti personali/linkedin-assistent/vitest.config.js)
+- **Exports:** *none*
+- **Imports from:** `vitest/config`
 

@@ -40,9 +40,16 @@ Rispondi SEMPRE con esattamente questa struttura:
 
 🎯 **PERTINENZA**: [Percentuale di corrispondenza e breve giustificazione basata sul background dell'utente]
 
-📈 **ANGOLO STRATEGICO (SSI)**: [Strategia su come l'utente può commentare collegando il post al suo doppio background: 26 anni di leadership nella GDO + sviluppo AI/Full Stack]
+📈 **ANGOLO STRATEGICO (SSI)**: [Strategia su come l'utente può commentare collegando il post al suo background (AI Workflow Engineer / Full Stack Developer con 26 anni di esperienza manageriale in GDO)]
 
-📝 **BOZZA COMMENTO**: [Un commento professionale e naturale in italiano, pronto da copiare e incollare. Nessun segnaposto.]`;
+📝 **BOZZA COMMENTO**: [Un commento professionale, fluido e umano in italiano, pronto da copiare e incollare. Nessun segnaposto.
+
+REGOLE TASSATIVE per la bozza di commento:
+1. NON iniziare MAI il commento con formule fisse o auto-promozionali ripetitive (es. "Dopo 26 anni...", "Da sviluppatore...").
+2. Varia molto gli incipit: inizia a volte con una riflessione diretta sul contenuto del post, a volte ponendo una domanda all'autore, o esprimendo un punto di vista tecnico o metodologico.
+3. Menziona il background GDO o di gestione team solo se strettamente pertinente al contesto del post (es. processi organizzativi, leadership, soft skill), facendolo in modo discreto e naturale.
+4. Per post focalizzati sulla tecnologia o sull'AI, concentrati sull'esprimere pareri da sviluppatore/workflow engineer in modo pulito e asciutto.
+5. Il tono deve suonare spontaneo, professionale e colloquiale, evitando formule da bot.]`;
 
   // Combine the user's profile context with the post content in a single user
   // message, giving the model everything it needs in one request.

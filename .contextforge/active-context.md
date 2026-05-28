@@ -6,6 +6,9 @@
 
 ## Recent 10 Commits
 
+- `a1ce65d fix: update LinkedIn cookie domain and add result validation to search engine`
+- `01d366e feat: add LinkedIn session cookie to environment configuration`
+- `91afadd feat: enforce Italian language constraint in triage filter and update search queries for localized content`
 - `cacc5ad feat: implement interactive Telegram bot with command support and add project documentation`
 - `3636937 feat: implement Telegram bot orchestration and automated digest delivery pipeline`
 - `7f45296 feat: implement AI triage filter and SSI post analysis modules with comprehensive unit tests`
@@ -18,7 +21,7 @@ No TODO or FIXME comments found in the code.
 
 ## Roadmap
 
-**Progress:** 14/14 tasks completed (100%)
+**Progress:** 16/16 tasks completed (100%)
 
 ### Phase 1 — Setup & Config
 - [x] Initialize `package.json` with dependencies (`playwright`, `@tavily/core`, `dotenv`, `vitest`)
@@ -41,4 +44,8 @@ No TODO or FIXME comments found in the code.
 - [x] Create main orchestration pipeline in `index.js`
 - [x] Create controller `bot.js` for Telegram remote control (/suggest, /profile, /status)
 - [x] Run integration and end-to-end pipeline validation
+
+### Phase 5 — Docker & Deployment
+- [x] Configure Docker environment (`Dockerfile`, `docker-compose.yml`, `.dockerignore`)
+- [x] Implement GitHub Actions workflow (`.github/workflows/suggest.yml`) for scheduled execution
 

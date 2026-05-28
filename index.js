@@ -14,13 +14,14 @@
  * Run with: `npm start`
  */
 
-import { scrapeUserProfile } from './src/linkedin_scraper.js';
+import { scrapeUserProfile, scrapeUserActivity } from './src/linkedin_scraper.js';
 import { searchLinkedInPosts } from './src/search_engine.js';
 import { eseguiTriagePost } from './src/triage_filter.js';
 import { analizzaPostPerSSI } from './src/ssi_analyzer.js';
 import { loadSeen, saveSeen } from './src/seen_store.js';
 import { inviaATelegram } from './src/telegram_sender.js';
 import { MIN_MATCH_SCORE } from './src/config.js';
+import { generateDynamicQueries } from './src/query_generator.js';
 
 /** Promisified setTimeout — used to add a 1-second delay between API calls to avoid rate limits. */
 const wait = (ms) => new Promise(resolve => setTimeout(resolve, ms));
@@ -41,14 +42,15 @@ async function runLinkedinAssistant() {
 
   console.log('👤 Loading profile information...');
   const profile = await scrapeUserProfile();
+  const activity = await scrapeUserActivity();
 
-  // Topic queries that define the user's areas of interest.
-  // Adding or removing entries here changes what the bot searches for.
-  const queries = [
-    'sviluppatore Vue.js Node.js',
-    'automazione AI workflow italiano',
-    'cambio carriera sviluppatore'
-  ];
+  const queries = await generateDynamicQueries(profile, activity);
+  console.log('[index] Generated queries:', queries);
+
+  const activitySummary = activity.length > 0
+    ? activity.map(a => `- [${a.type.toUpperCase()}] ${a.text.substring(0, 150)}...`).join('\n')
+    : 'No recent activity available.';
+  const fullProfileContext = `USER PROFILE:\n${profile}\n\nRECENT ACTIVITY:\n${activitySummary}`;
 
   console.log('🔍 Searching recent posts...');
   let rawPosts = [];
@@ -78,11 +80,11 @@ async function runLinkedinAssistant() {
 
   for (const post of newPosts) {
     console.log(`\n⏳ Checking post: "${post.title || 'Untitled'}"...`);
-    const passed = await eseguiTriagePost(post);
+    const passed = await eseguiTriagePost(post, fullProfileContext);
 
     if (passed) {
       console.log(`🔥 [APPROVED] Post matches criteria. Running SSI analysis...`);
-      const report = await analizzaPostPerSSI(post, profile);
+      const report = await analizzaPostPerSSI(post, fullProfileContext);
 
       // Parse the PERTINENZA percentage from the structured report.
       // If the model omits it (malformed response), score is null and the

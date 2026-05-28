@@ -20,6 +20,8 @@ This document contains an optimized summary of the project context for LLMs.
   - **Exports:** `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`, `TAVILY_API_KEY`, `GROQ_API_KEY`, `DEEPSEEK_API_KEY`, `LINKEDIN_LI_AT`, `LINKEDIN_PROFILE_URL`, `TRIAGE_MODEL`, `ANALYSIS_MODEL`, `MIN_MATCH_SCORE`
 - `src/linkedin_scraper.js`:
   - **Exports:** `scrapeUserProfile`, `scrapeUserActivity`
+- `src/query_generator.js`:
+  - **Exports:** `generateDynamicQueries`
 - `src/search_engine.js`:
   - **Exports:** `searchLinkedInPosts`
 - `src/seen_store.js`:
@@ -33,4 +35,5 @@ This document contains an optimized summary of the project context for LLMs.
 - `tests/search_and_scrape.test.js`:
 - `tests/setup.test.js`:
 - `tests/triage_and_analysis.test.js`:
+- `vitest.config.js`:
 

@@ -21,3 +21,8 @@
 - [x] Create main orchestration pipeline in `index.js`
 - [x] Create controller `bot.js` for Telegram remote control (/suggest, /profile, /status)
 - [x] Run integration and end-to-end pipeline validation
+
+## Phase 5 — Docker & Deployment
+- [x] Configure Docker environment (`Dockerfile`, `docker-compose.yml`, `.dockerignore`)
+- [x] Implement GitHub Actions workflow (`.github/workflows/suggest.yml`) for scheduled execution
+
