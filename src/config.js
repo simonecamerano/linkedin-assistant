@@ -38,10 +38,8 @@ export const LINKEDIN_LI_AT = process.env.LINKEDIN_LI_AT;
 export const LINKEDIN_PROFILE_URL = process.env.LINKEDIN_PROFILE_URL;
 
 /** Model identifier sent to Groq for the lightweight triage step (e.g. "llama3-8b-8192"). */
-export const TRIAGE_MODEL = process.env.TRIAGE_MODEL;
-
-/** Model identifier sent to DeepSeek for the full SSI analysis step (e.g. "deepseek-chat"). */
-export const ANALYSIS_MODEL = process.env.ANALYSIS_MODEL;
+export const TRIAGE_MODEL = process.env.TRIAGE_MODEL || 'llama-3.3-70b-versatile';
+export const ANALYSIS_MODEL = process.env.ANALYSIS_MODEL || 'deepseek-chat';
 
 /**
  * Minimum relevance score (0–100) a post must reach after SSI analysis
