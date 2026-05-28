@@ -6,6 +6,8 @@
 
 ## Recent 10 Commits
 
+- `de1f45e feat: track CV files in data directory and update gitignore`
+- `ea4f9af docs: update contextforge metadata after Dockerfile change`
 - `81da139 feat: use official Playwright base image in Dockerfile to support Chromium scraping`
 - `37d15a7 docs: update contextforge metadata and docs`
 - `f801e9a feat: add default values for AI models in config`
@@ -14,8 +16,6 @@
 - `6ecffa1 feat: enforce Italian language constraint in triage filter and update search queries for localized content`
 - `f538924 feat: implement interactive Telegram bot with command support and add project documentation`
 - `017a9fa feat: implement Telegram bot orchestration and automated digest delivery pipeline`
-- `2062efb feat: implement AI triage filter and SSI post analysis modules with comprehensive unit tests`
-- `7c4356c feat: implement core infrastructure, Playwright scrapers, search engine, and test setup for LinkedIn assistant`
 
 ## Active Tasks in Code (TODO / FIXME)
 
